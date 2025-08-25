@@ -1,6 +1,6 @@
 ![FIT-DNU](https://github.com/user-attachments/assets/2f53f6dd-ff4b-4890-b05a-ba7935ed6f9f)
-🦺 Ứng Dụng Giám Sát An Toàn Lao Động Bằng AI
-📌 Giới thiệu
+#🦺 Ứng Dụng Giám Sát An Toàn Lao Động Bằng AI
+##📌 Giới thiệu
 
 Ứng dụng web này cho phép người dùng tải lên video hoặc kết nối camera giám sát công trường và sử dụng AI (YOLOv11) để:
 
@@ -13,7 +13,7 @@ Thống kê & hiển thị báo cáo trực quan về mức độ tuân thủ an
 <img width="1920" height="1096" alt="image" src="https://github.com/user-attachments/assets/8d936cfa-1957-48f4-b0d1-2664de47ebed" />
 
 
-🚀 Tính năng chính
+##🚀 Tính năng chính
 
 Nhận diện PPE (Đồ bảo hộ)
 
@@ -43,7 +43,7 @@ Tìm kiếm & xem lại dữ liệu đã xử lý.
 
 Xuất dữ liệu, video để xem kết quả
 
-🛠️ Công nghệ sử dụng
+##🛠️ Công nghệ sử dụng
 
 Frontend: Streamlit (Python), HTML5, CSS3
 
@@ -55,7 +55,7 @@ Thống kê & trực quan hóa: Pandas, Plotly Express
 
 Triển khai: Ngrok / Streamlit Cloud / Docker
 
-📂 Cấu trúc chính
+##📂 Cấu trúc chính
 
 PPE.py → Giao diện web + toàn bộ logic xử lý.
 Ứng dụng được xây dựng trên Streamlit, hỗ trợ:
@@ -65,7 +65,7 @@ Tab “Giám sát trực tiếp”: Kết nối camera hoặc tải video để 
 Tab “Thống kê & Báo cáo”: Hiển thị số liệu tuân thủ/vi phạm, biểu đồ trực quan.
 
 Tab “Dữ liệu đã lưu”: Xem lại kết quả, báo cáo hoặc xuất Excel.
-⚡ Cách chạy
+##⚡ Cách chạy
 
 Clone hoặc tải source code về máy.
 
@@ -81,7 +81,7 @@ ngrok.set_auth_token("YOUR_TOKEN")
 public_url = ngrok.connect(8501, "http")
 print(public_url)
 
-📸 Giao diện
+##📸 Giao diện
 
 Hiển thị video với bounding box PPE.
 
@@ -89,7 +89,7 @@ Cột bên phải: thống kê, biểu đồ, báo cáo.
 
 Có thể xuất Excel hoặc lưu dữ liệu.
 
-🌟 Ý nghĩa & giá trị thực tiễn
+##🌟 Ý nghĩa & giá trị thực tiễn
 
 Ứng dụng mang lại giải pháp quản lý an toàn lao động thông minh cho:
 
@@ -100,4 +100,8 @@ Khu công nghiệp, nhà máy: Đảm bảo tuân thủ PPE.
 Cơ quan quản lý: Dễ dàng thống kê, lập báo cáo định kỳ.
 
 
-✨ Đây là một giải pháp hữu ích cho các doanh nghiệp xây dựng, khu công nghiệp, nhà máy hoặc công trình thi công trong việc giám sát an toàn lao động. Ứng dụng giúp tự động nhận diện việc công nhân có trang bị đầy đủ mũ bảo hộ, áo phản quang, giày bảo hộ hay không thông qua camera giám sát hoặc video.
+st.markdown("""
+✨ **Đây là một công cụ hữu ích cho doanh nghiệp xây dựng, khu công nghiệp và nhà máy** trong việc giám sát an toàn lao động.  
+Ứng dụng giúp **tự động nhận diện** công nhân có trang bị đầy đủ mũ bảo hộ, áo phản quang, giày bảo hộ hay không thông qua **camera giám sát hoặc video**.  
+""")
+

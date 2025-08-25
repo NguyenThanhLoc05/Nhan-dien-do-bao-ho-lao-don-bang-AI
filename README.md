@@ -2,27 +2,47 @@
 🦺 Ứng Dụng Giám Sát An Toàn Lao Động Bằng AI
 📌 Giới thiệu
 
-Ứng dụng web này cho phép người dùng tải lên video/camera giám sát công trường và sử dụng công nghệ AI (YOLOv11) để:
+Ứng dụng web này cho phép người dùng tải lên video hoặc kết nối camera giám sát công trường và sử dụng AI (YOLOv11) để:
+
 Nhận diện và theo dõi người lao động trong công trường.
-Phát hiện và trích xuất thông tin quan trọng: tình trạng đội mũ bảo hộ, mặc áo phản quang, đi giày bảo hộ.
-Thống kê và hiển thị báo cáo trực quan về việc tuân thủ an toàn lao động.
-<img width="1920" height="1096" alt="image" src="https://github.com/user-attachments/assets/ccfa02d2-0c79-40e4-a02b-31d1d5ff6f0d" />
+
+Phát hiện & trích xuất tình trạng đội mũ bảo hộ, mặc áo phản quang, đi giày bảo hộ.
+
+Thống kê & hiển thị báo cáo trực quan về mức độ tuân thủ an toàn lao động.
+
+<img width="1920" height="1096" alt="image" src="https://github.com/user-attachments/assets/8d936cfa-1957-48f4-b0d1-2664de47ebed" />
+
 
 🚀 Tính năng chính
-Nhận diện PPE (Đồ bảo hộ): Tự động phát hiện mũ bảo hộ, áo phản quang, giày bảo hộ trong video/camera công trường.
-Phân tích thông minh: AI xác định tình trạng thiếu đồ bảo hộ (thiếu mũ, áo, giày) và hiển thị cảnh báo trực tiếp.
-Thống kê & báo cáo:
-Đếm số lượng người lao động tuân thủ và vi phạm.
+
+Nhận diện PPE (Đồ bảo hộ)
+
+Phát hiện mũ bảo hộ, áo phản quang, giày bảo hộ trong video/camera.
+
+<img width="1920" height="1051" alt="image" src="https://github.com/user-attachments/assets/44d5c708-f392-4c04-8fed-41c0c8e07a8c" />
+
+Phân tích thông minh
+
+Xác định tình trạng thiếu PPE và hiển thị cảnh báo trực tiếp trên video.
+
+<img width="1920" height="1047" alt="image" src="https://github.com/user-attachments/assets/db7d84ad-0fd9-407b-8502-e7c3c208c496" />
+
+Thống kê & báo cáo
+
+Đếm số lượng công nhân tuân thủ/vi phạm.
+
 Biểu đồ trực quan về tỉ lệ an toàn lao động.
-Xem trực tiếp & tra cứu:
-Xem kết quả phát hiện theo thời gian thực từ video/camera.
-Tìm kiếm và xem lại kết quả đã xử lý.
-Xuất dữ liệu:
-Lưu báo cáo thống kê dưới dạng Excel (.xlsx).
-Xuất danh sách vi phạm an toàn lao động.
-Quản lý giám sát:
-Xem lại video/ảnh đã phân tích.
-Lọc và xóa dữ liệu không cần thiết.
+
+<img width="1920" height="632" alt="image" src="https://github.com/user-attachments/assets/5b198860-d5eb-4fc0-889d-066ca7d7a32e" />
+
+Xem trực tiếp & tra cứu
+
+Hiển thị kết quả phát hiện theo thời gian thực.
+
+Tìm kiếm & xem lại dữ liệu đã xử lý.
+
+Xuất dữ liệu, video để xem kết quả
+
 🛠️ Công nghệ sử dụng
 
 Frontend: Streamlit (Python), HTML5, CSS3
@@ -33,9 +53,8 @@ Xử lý video: OpenCV
 
 Thống kê & trực quan hóa: Pandas, Plotly Express
 
-Lưu trữ dữ liệu: (Tuỳ chọn) Firebase / SQLite / Google Drive
-
 Triển khai: Ngrok / Streamlit Cloud / Docker
+
 📂 Cấu trúc chính
 
 PPE.py → Giao diện web + toàn bộ logic xử lý.
@@ -52,40 +71,33 @@ Clone hoặc tải source code về máy.
 
 Bước 1: Cài đặt thư viện cần thiết:
 pip install -r requirements.txt
-!pip install -r requirements.txt
-!pip install pyngrok ultralytics streamlit
-!streamlit run app.py --server.port 8501 &
-!pip install streamlit pyngrok
-!pip install streamlit pyngrok ultralytics opencv-python-headless
-Bước 2: streamlit run PPE.py
-Bước 3: from pyngrok import ngrok
+pip install streamlit pyngrok ultralytics opencv-python-headless
 
-!ngrok authtoken 31hCjltcn2orcsPQ2SLnFgmfVve_vWQJowKySFYrDUQ5dGmW
-
-# Chạy Streamlit
-get_ipython().system_raw("streamlit run app.py --server.port 8501 &")
-
-# Tạo link public
+Bước 2: Chạy ứng 
+streamlit run PPE.py
+Bước 3: Kết nối Ngrok để public
+from pyngrok import ngrok
+ngrok.set_auth_token("YOUR_TOKEN")
 public_url = ngrok.connect(8501, "http")
 print(public_url)
-Truy cập địa chỉ hiển thị (thường là http://localhost:8501) để sử dụng.
 
-Chọn Tải video / Kết nối camera để thử nghiệm.
-
-Kết quả phát hiện hiển thị ở cột bên phải, kèm theo số lượng, biểu đồ và cảnh báo.
 📸 Giao diện
 
-Giao diện hiện đại, đơn giản, sử dụng Streamlit + CSS tùy chỉnh.
+Hiển thị video với bounding box PPE.
 
-Hỗ trợ chế độ upload video hoặc camera trực tiếp.
+Cột bên phải: thống kê, biểu đồ, báo cáo.
 
-Hiển thị khung phát hiện đối tượng (bounding box) trên video.
+Có thể xuất Excel hoặc lưu dữ liệu.
 
-Cột bên phải hiển thị:
+🌟 Ý nghĩa & giá trị thực tiễn
 
-Thống kê số lượng PPE đầy đủ/thiếu.
+Ứng dụng mang lại giải pháp quản lý an toàn lao động thông minh cho:
 
-Biểu đồ trực quan.
+Doanh nghiệp xây dựng: Giám sát công nhân tại công trường.
 
-Nút xuất Excel hoặc lưu dữ liệu.
+Khu công nghiệp, nhà máy: Đảm bảo tuân thủ PPE.
+
+Cơ quan quản lý: Dễ dàng thống kê, lập báo cáo định kỳ.
+
+
 ✨ Đây là một giải pháp hữu ích cho các doanh nghiệp xây dựng, khu công nghiệp, nhà máy hoặc công trình thi công trong việc giám sát an toàn lao động. Ứng dụng giúp tự động nhận diện việc công nhân có trang bị đầy đủ mũ bảo hộ, áo phản quang, giày bảo hộ hay không thông qua camera giám sát hoặc video.
